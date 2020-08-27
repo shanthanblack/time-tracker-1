@@ -38,11 +38,6 @@ stage ('Build') {
             steps {
                 sh 'cp web/target/*.war /opt/tomcat/webapps/webapp.war'       
            }
-          post {
-                 always {
-                     jiraSendDeploymentInfo site: 'shanthanidentity.atlassian.net', environmentId: 'us-stg-1', environmentName: 'us-stg-1', environmentType: 'staging'
-                 }
-             }
     }
     
     
